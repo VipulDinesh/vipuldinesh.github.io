@@ -615,6 +615,10 @@
   }
 }
 
+.project-split-layout.single-column {
+  grid-template-columns: minmax(0, 800px);
+}
+
 .project-left-panel {
   display: flex;
   flex-direction: column;

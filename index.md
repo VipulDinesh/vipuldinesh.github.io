@@ -8,7 +8,7 @@ layout: default
       <div class="hero-info-wrapper">
         <div class="hero-text">
            <h1 class="hero-name">{{ site.author | default: "Your Name" }}</h1>
-           <p class="hero-title">Robotics & Mechatronics</p>
+           <p class="hero-title">Mechatronics engineering · ROS 2 · Robot simulation</p>
         </div>
         
         <div class="hero-actions">
@@ -28,12 +28,13 @@ layout: default
   <div class="container">
     <div class="section-header">
       <h2>Portfolio</h2>
-      <p class="section-subtitle">A curated collection of my research and design</p>
+      <p class="section-subtitle">Selected work across robot simulation, control, and operator interfaces</p>
     </div>
     
     <div class="projects-grid-featured">
-      {% assign featured_projects = site.projects | where: "featured", true | sort: "date" | reverse %}
-      {% assign all_projects = site.projects | sort: "date" | reverse %}
+      {% assign published_projects = site.projects | where_exp: "project", "project.published != false" %}
+      {% assign featured_projects = published_projects | where: "featured", true | sort: "date" | reverse %}
+      {% assign all_projects = published_projects | sort: "date" | reverse %}
       {% assign combined_projects = featured_projects | concat: all_projects %}
       {% assign unique_projects = combined_projects | uniq %}
       {% for project in unique_projects limit: 9 %}
@@ -121,37 +122,37 @@ layout: default
         <div class="skill-category">
           <h3><i class="fas fa-robot"></i> Robotics</h3>
           <div class="skill-tags">
-            <span class="skill-tag">ROS</span>
-            <span class="skill-tag">Kinematics</span>
-            <span class="skill-tag">Path Planning</span>
-            <span class="skill-tag">SLAM</span>
+            <span class="skill-tag">ROS 2</span>
+            <span class="skill-tag">Gazebo</span>
+            <span class="skill-tag">URDF / Xacro</span>
+            <span class="skill-tag">Robot Control</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-microchip"></i> Electronics</h3>
+          <h3><i class="fas fa-microchip"></i> Systems</h3>
           <div class="skill-tags">
-            <span class="skill-tag">Arduino</span>
-            <span class="skill-tag">ESP32</span>
-            <span class="skill-tag">PCB Design</span>
+            <span class="skill-tag">Mechatronics</span>
+            <span class="skill-tag">Actuation</span>
             <span class="skill-tag">Sensors</span>
+            <span class="skill-tag">System Integration</span>
           </div>
         </div>
         <div class="skill-category">
           <h3><i class="fas fa-code"></i> Programming</h3>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
-            <span class="skill-tag">C/C++</span>
-            <span class="skill-tag">MATLAB</span>
-            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">PyGame</span>
+            <span class="skill-tag">ROS Nodes</span>
+            <span class="skill-tag">Linux</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-cube"></i> CAD/Design</h3>
+          <h3><i class="fas fa-cube"></i> Simulation & Design</h3>
           <div class="skill-tags">
-            <span class="skill-tag">SolidWorks</span>
-            <span class="skill-tag">Fusion 360</span>
-            <span class="skill-tag">3D Printing</span>
-            <span class="skill-tag">KiCad</span>
+            <span class="skill-tag">Gazebo Worlds</span>
+            <span class="skill-tag">RViz</span>
+            <span class="skill-tag">Robot Models</span>
+            <span class="skill-tag">3D CAD</span>
           </div>
         </div>
       </div>

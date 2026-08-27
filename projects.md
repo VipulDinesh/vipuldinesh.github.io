@@ -24,7 +24,9 @@ permalink: /projects/
         
         <!-- Projects Grid -->
         <div class="projects-grid" id="projects-grid">
-            {% for project in site.projects %}
+            {% assign published_projects = site.projects | where_exp: "project", "project.published != false" %}
+            {% assign sorted_projects = published_projects | sort: "date" | reverse %}
+            {% for project in sorted_projects %}
             <article class="project-card" 
                      data-categories="{% for cat in project.categories %}{{ cat | slugify }} {% endfor %}">
                 
@@ -121,14 +123,14 @@ permalink: /projects/
             {% endfor %}
         </div>
         
-        {% if site.projects.size == 0 %}
+        {% if published_projects.size == 0 %}
         <div class="no-projects">
             <div class="no-projects-content">
                 <i class="fas fa-robot"></i>
                 <h3>No Projects Yet</h3>
                 <p>Check back soon for exciting robotics and mechatronics projects!</p>
-                <a href="https://github.com/aojedao/MESGRO" class="btn-primary" target="_blank">
-                    Contribute to MESGRO
+                <a href="mailto:{{ site.email }}" class="btn-primary">
+                    Get in touch
                 </a>
             </div>
         </div>

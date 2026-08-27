@@ -32,7 +32,11 @@ layout: default
             <h1 class="project-title-simple">{{ page.title }}</h1>
         </div>
 
-        <div class="project-split-layout">
+        {% assign has_project_media = false %}
+        {% if page.models or page.gallery or page.visualizations or page.custom_plot or page.interactive_plot or page.schematics %}
+        {% assign has_project_media = true %}
+        {% endif %}
+        <div class="project-split-layout{% unless has_project_media %} single-column{% endunless %}">
             <!-- Left Column: Text & Info -->
             <div class="project-left-panel">
 
@@ -137,6 +141,7 @@ layout: default
             </div>
 
             <!-- Right Column: Media -->
+            {% if has_project_media %}
             <div class="project-right-panel">
 
 
@@ -234,19 +239,20 @@ layout: default
                         </div>
                         {% endfor %}
                     </div>
+                </section>
+                {% endif %}
             </div>
-            </section>
             {% endif %}
 
         </div>
     </div>
 </div>
-</div>
 
 <!-- Project Navigation -->
 <div class="project-navigation">
     <div class="container">
-        {% assign project_array = site.projects | sort: 'date' %}
+        {% assign published_projects = site.projects | where_exp: "project", "project.published != false" %}
+        {% assign project_array = published_projects | sort: 'date' %}
         {% for project in project_array %}
         {% if project.url == page.url %}
         {% assign current_index = forloop.index %}

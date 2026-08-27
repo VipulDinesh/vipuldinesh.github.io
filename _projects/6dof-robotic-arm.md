@@ -1,5 +1,6 @@
 ---
 layout: project
+published: false
 title: "6-DOF Robotic Arm with Vision System"
 description: "An advanced 6-degree-of-freedom robotic arm with computer vision capabilities for object detection, picking, and precise placement tasks."
 date: 2024-09-20
@@ -720,4 +721,3 @@ plt.show()
 - **Mobile Base**: Integration with wheeled platform for larger workspace
 - **Dual-Arm Coordination**: Two-arm system for complex assembly tasks
 - **Human-Robot Collaboration**: Safe interaction with human operators
-

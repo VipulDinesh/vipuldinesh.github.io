@@ -1,5 +1,6 @@
 ---
 layout: project
+published: false
 title: "Autonomous Line Following Robot"
 description: "A sophisticated line-following robot built with Arduino Uno, featuring PID control, obstacle detection, and wireless monitoring capabilities."
 date: 2024-10-15
@@ -474,4 +475,3 @@ After extensive testing and PID tuning, the robot achieved:
 
 </div>
 </details>
-

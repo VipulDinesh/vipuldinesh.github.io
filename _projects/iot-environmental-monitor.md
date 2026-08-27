@@ -1,5 +1,6 @@
 ---
 layout: project
+published: false
 title: "IoT Environmental Monitoring Station"
 description: "A comprehensive IoT-based environmental monitoring system with wireless sensors, real-time data visualization, and automated alerts for greenhouse and outdoor applications."
 date: 2024-08-10
@@ -1190,4 +1191,3 @@ plt.show()
 2. **Data Validation**: Sensor drift detection prevents bad data
 3. **Security**: IoT devices are attractive targets for attacks
 4. **Scalability**: Database design affects query performance
-
