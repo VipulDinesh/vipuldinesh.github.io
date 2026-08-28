@@ -34,10 +34,7 @@ layout: default
     <div class="projects-grid-featured">
       {% assign published_projects = site.projects | where_exp: "project", "project.published != false" %}
       {% assign featured_projects = published_projects | where: "featured", true | sort: "order" %}
-      {% assign all_projects = published_projects | sort: "order" %}
-      {% assign combined_projects = featured_projects | concat: all_projects %}
-      {% assign unique_projects = combined_projects | uniq %}
-      {% for project in unique_projects limit: 9 %}
+      {% for project in featured_projects limit: 3 %}
         <div class="project-card-featured">
           <div class="project-media">
             {% if project.featured_image %}
