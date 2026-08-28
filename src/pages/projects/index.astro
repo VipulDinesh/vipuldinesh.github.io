@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const projectPath = (id: string) => `/projects/${id.replace(/\.(md|mdx)$/, '')}/`;
+---
+
+<BaseLayout
+  title="Robotics Projects | Vipul Dinesh"
+  description="Robotics hardware, embedded control, mechanism design, simulation, integration, and validation projects by Vipul Dinesh."
+>
+  <section class="page-intro">
+    <p class="eyebrow">Engineering portfolio</p>
+    <h1>Systems built to move,<br />measure, and endure.</h1>
+    <p>Selected work spanning physical robots, precision mechanisms, embedded control, simulation, manufacturing, and qualification.</p>
+  </section>
+
+  <section class="all-projects" aria-label="All projects">
+    {projects.map((project, index) => (
+      <article class="all-project-card">
+        <a class:list={['all-project-visual', !project.data.image && 'placeholder']} href={projectPath(project.id)}>
+          <span>0{index + 1}</span>
+          {project.data.image ? <img src={project.data.image} alt="" loading={index < 2 ? 'eager' : 'lazy'} /> : <strong>6-DOF<br />Precision</strong>}
+        </a>
+        <div>
+          <p class="project-label">{project.data.organization}</p>
+          <h2><a href={projectPath(project.id)}>{project.data.title}</a></h2>
+          <p>{project.data.description}</p>
+          <ul class="metric-list">
+            {project.data.metrics.slice(0, 3).map((metric) => <li>{metric}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

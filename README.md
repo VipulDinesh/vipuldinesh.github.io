@@ -1,25 +1,35 @@
-# Vipul Dinesh — Robotics & Mechatronics Portfolio
+# Vipul Dinesh — Robotics Engineering Portfolio
 
-Personal engineering portfolio for [vipuldinesh.github.io](https://vipuldinesh.github.io), documenting robotics hardware, mechanical design, embedded control, and systems integration.
+Recruiter-focused engineering portfolio built with Astro and deployed as a static site on GitHub Pages.
 
-## Featured work
+## Editing content
 
-- **12-DOF Quadruped Robot** — an approximately 8 kg platform with analytic inverse kinematics and ROS 2 locomotion control.
-- **Mars Rover Manipal** — end-to-end mechanical design, manufacturing, and integration across the rover platform and science module.
-- **Az-El Dual Axis Satellite Tracker** — a full-sky, sub-degree pointing system with embedded GPredict/Hamlib integration.
-- **Precision Stewart Platform** — characterization and qualification support for satellite-telescope optical alignment.
+Project case studies are Markdown files in `src/content/projects/`. Each file starts with a small metadata block containing the project title, role, organization, metrics, technologies, links, and image path. Everything below that block is normal Markdown.
 
-## Development
+To add a project:
 
-The site is built with Jekyll and deployed through GitHub Pages.
+1. Copy an existing file in `src/content/projects/`.
+2. Rename it using a short URL-friendly name.
+3. Replace its metadata and written case study.
+4. Add its images under `public/assets/images/projects/`.
+
+Shared page structure lives under `src/layouts/`, pages under `src/pages/`, and the visual system in `src/styles/global.css`.
+
+## Local development
+
+Install Node.js 22 or newer, then run:
 
 ```bash
-bundle install
-bundle exec jekyll serve
+npm install
+npm run dev
 ```
 
-Project case studies live in `_projects/`. Shared layouts, styles, and scripts are organized under `_layouts/`, `_sass/`, and `assets/`.
+Open the local address printed by Astro. Before publishing, verify the production build:
 
-## Credits
+```bash
+npm run build
+```
 
-Built on the open-source [MESGRO robotics portfolio template](https://github.com/aojedao/MESGRO).
+## Deployment
+
+The GitHub Pages workflow builds and publishes the static site when changes reach the `main` branch. The `portfolio-v2` branch can be developed and reviewed without changing the currently published site.

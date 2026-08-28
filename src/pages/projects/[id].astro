@@ -1,0 +1,78 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { id: project.id.replace(/\.(md|mdx)$/, '') },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const allProjects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const currentIndex = allProjects.findIndex((entry) => entry.id === project.id);
+const previous = currentIndex > 0 ? allProjects[currentIndex - 1] : undefined;
+const next = currentIndex < allProjects.length - 1 ? allProjects[currentIndex + 1] : undefined;
+
+const projectPath = (id: string) => `/projects/${id.replace(/\.(md|mdx)$/, '')}/`;
+---
+
+<BaseLayout
+  title={`${project.data.title} | Vipul Dinesh`}
+  description={project.data.description}
+  image={project.data.image}
+>
+  <article class="case-study">
+    <header class="case-hero">
+      <div class="case-heading">
+        <p class="eyebrow">Project case study · {project.data.organization}</p>
+        <h1>{project.data.title}</h1>
+        <p class="case-summary">{project.data.description}</p>
+        <div class="case-actions">
+          {project.data.demoUrl && <a class="button button-primary" href={project.data.demoUrl} target="_blank" rel="noreferrer">Watch demonstration ↗</a>}
+          {project.data.githubUrl && <a class="button button-secondary" href={project.data.githubUrl} target="_blank" rel="noreferrer">View source ↗</a>}
+        </div>
+      </div>
+      {project.data.image ? (
+        <figure class="case-image">
+          <img src={project.data.image} alt={project.data.imageAlt ?? project.data.title} />
+        </figure>
+      ) : (
+        <div class="case-image case-image-placeholder" aria-label="Project imagery is not publicly available">
+          <span>Visual material restricted</span>
+          <strong>6-DOF</strong>
+        </div>
+      )}
+    </header>
+
+    <section class="case-facts" aria-label="Project facts">
+      <div><span>Organization</span><strong>{project.data.organization}</strong></div>
+      <div><span>My role</span><strong>{project.data.role}</strong></div>
+      <div><span>Period</span><strong>{project.data.period}</strong></div>
+    </section>
+
+    <section class="case-body">
+      <aside class="case-sidebar">
+        <p class="eyebrow">Measured outcomes</p>
+        <ul class="outcome-list">
+          {project.data.metrics.map((metric) => <li>{metric}</li>)}
+        </ul>
+        <p class="eyebrow tools-heading">Engineering toolkit</p>
+        <ul class="tool-list">
+          {project.data.technologies.map((technology) => <li>{technology}</li>)}
+        </ul>
+      </aside>
+      <div class="case-narrative prose">
+        <Content />
+      </div>
+    </section>
+
+    <nav class="project-pagination" aria-label="Project navigation">
+      {previous ? <a href={projectPath(previous.id)}><span>Previous project</span><strong>← {previous.data.title}</strong></a> : <span></span>}
+      {next ? <a href={projectPath(next.id)}><span>Next project</span><strong>{next.data.title} →</strong></a> : <a href="/projects/"><span>Explore</span><strong>All projects →</strong></a>}
+    </nav>
+  </article>
+</BaseLayout>

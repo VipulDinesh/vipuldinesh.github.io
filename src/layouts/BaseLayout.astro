@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  image = '/og.png'
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f2efe8" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Vipul Dinesh, home">
+        <span>VD</span>
+        <span class="wordmark-name">Vipul Dinesh</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="/#work">Work</a>
+        <a href="/#experience">Experience</a>
+        <a href="/about/">About</a>
+      </nav>
+      <a class="header-resume" href="/Vipul_Dinesh_Robotics_Engineer_Resume.pdf" target="_blank" rel="noreferrer">
+        Résumé <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+    <main id="main-content">
+      <slot />
+    </main>
+    <footer>
+      <div>
+        <strong>Vipul Dinesh</strong>
+        <p>Robotics hardware · Mechanical design · Systems integration</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:vipuldinesh11@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/vipul-dinesh/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://github.com/VipulDinesh" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </footer>
+  </body>
+</html>
