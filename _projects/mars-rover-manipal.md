@@ -36,3 +36,11 @@ Moving from one auger to two and optimizing the operating cycle enabled up to **
 ## Leadership and supporting software
 
 I led mechanical design and manufacturing while also directing technical recruitment across more than 1,000 applicants. A PyGame-based rover interface was a smaller supporting contribution within the larger rover program; its [source is available on GitHub](https://github.com/VipulDinesh/MRM-Pygame-GUI).
+
+## Rover overview
+
+Mars Rover Manipal's video overview for the European Rover Challenge 2025 presents the complete rover and its competition capabilities.
+
+<div class="project-video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/DTLZcMih598" title="Mars Rover Manipal overview for the European Rover Challenge 2025" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>

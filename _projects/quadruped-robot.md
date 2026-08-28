@@ -31,3 +31,21 @@ The core challenge was making the mechanical platform, actuation, computation, a
 ## Current development
 
 The platform is an active R&D project. The next stage is continued gait refinement, robustness testing, and expansion of the locomotion stack.
+
+## Demonstrations
+
+### Platform, interface, gaits, and poses
+
+An introduction to the quadruped platform, its operator interface, and the implemented gait and pose controls.
+
+<div class="project-video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/uoGV0OVlEwQ" title="Jimmy Quadruped demonstration: platform, interface, gaits, and poses" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+### Nav2 and SLAM
+
+A demonstration of the robot's ROS 2 navigation and simultaneous localization and mapping capabilities.
+
+<div class="project-video-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/JoXvKUSXJ1A" title="Jimmy Quadruped demonstration: Nav2 and SLAM" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
