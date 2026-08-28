@@ -99,11 +99,11 @@ python scripts/cad_to_gltf.py --check-step
 ### Examples
 
 ```powershell
-# Convert a robot arm STL
-python scripts/cad_to_gltf.py -i assets/models/robotic-arm/base.stl -o assets/models/robotic-arm/base.gltf
+# Convert a robot part STL
+python scripts/cad_to_gltf.py -i designs/robot-part.stl -o assets/models/your-project/robot-part.gltf
 
 # Convert a STEP assembly
-python scripts/cad_to_gltf.py -i designs/sensor-housing.step -o assets/models/iot-monitor/housing.gltf
+python scripts/cad_to_gltf.py -i designs/assembly.step -o assets/models/your-project/assembly.gltf
 
 # Batch convert multiple files (PowerShell)
 Get-ChildItem -Filter "*.stl" | ForEach-Object {

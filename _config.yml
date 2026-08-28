@@ -46,6 +46,8 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+  - CHANGELOG.md
+  - CONTRIBUTING.md
   - LICENSE
 
 # Site navigation

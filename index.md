@@ -128,45 +128,64 @@ layout: default
       <h2>Technical Expertise</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3><i class="fas fa-drafting-compass"></i> Mechanical Design &amp; Analysis</h3>
+          <h3><i class="fas fa-drafting-compass"></i> Mechanical Design &amp; CAD</h3>
           <div class="skill-tags">
-            <span class="skill-tag">SolidWorks / Fusion 360 / Creo</span>
-            <span class="skill-tag">ANSYS FEA</span>
-            <span class="skill-tag">Mechanism &amp; Transmission Design</span>
+            <span class="skill-tag">SolidWorks</span>
+            <span class="skill-tag">Fusion 360</span>
+            <span class="skill-tag">Creo</span>
+            <span class="skill-tag">ANSYS</span>
+            <span class="skill-tag">FEA</span>
+            <span class="skill-tag">Mechanism Design</span>
+            <span class="skill-tag">Transmission Design</span>
             <span class="skill-tag">Tolerance Analysis</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-microchip"></i> Embedded &amp; Motion Systems</h3>
+          <h3><i class="fas fa-microchip"></i> Embedded &amp; Electronics</h3>
           <div class="skill-tags">
-            <span class="skill-tag">ESP32 / STM32 / Raspberry Pi</span>
-            <span class="skill-tag">Motor &amp; Actuator Sizing</span>
-            <span class="skill-tag">Stepper &amp; Servo Control</span>
-            <span class="skill-tag">Motor Drivers (DM542 / TB6600)</span>
-            <span class="skill-tag">I²C / SPI / UART / CAN</span>
-            <span class="skill-tag">IMU / Encoders / LiDAR</span>
-            <span class="skill-tag">Battery &amp; Power Systems</span>
+            <span class="skill-tag">ESP32</span>
+            <span class="skill-tag">STM32</span>
+            <span class="skill-tag">Raspberry Pi</span>
+            <span class="skill-tag">Motor Drivers</span>
+            <span class="skill-tag">IMUs</span>
+            <span class="skill-tag">Encoders</span>
+            <span class="skill-tag">LiDAR</span>
+            <span class="skill-tag">I²C</span>
+            <span class="skill-tag">SPI</span>
+            <span class="skill-tag">UART</span>
+            <span class="skill-tag">CAN</span>
+            <span class="skill-tag">Power Systems</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-robot"></i> Robotics &amp; Autonomy</h3>
+          <h3><i class="fas fa-robot"></i> Robotics &amp; Control</h3>
           <div class="skill-tags">
             <span class="skill-tag">ROS 2</span>
-            <span class="skill-tag">Kinematics &amp; Inverse Kinematics</span>
-            <span class="skill-tag">PID Control</span>
-            <span class="skill-tag">Gazebo / RViz</span>
+            <span class="skill-tag">Gazebo</span>
+            <span class="skill-tag">RViz</span>
             <span class="skill-tag">Nav2</span>
-            <span class="skill-tag">MATLAB / Simulink</span>
+            <span class="skill-tag">Kinematics</span>
+            <span class="skill-tag">Inverse Kinematics</span>
+            <span class="skill-tag">PID Control</span>
+            <span class="skill-tag">Motion Control</span>
+            <span class="skill-tag">Motor Sizing</span>
+            <span class="skill-tag">Actuator Sizing</span>
+            <span class="skill-tag">Stepper Control</span>
+            <span class="skill-tag">Servo Control</span>
           </div>
         </div>
         <div class="skill-category">
           <h3><i class="fas fa-code"></i> Software &amp; Engineering Tools</h3>
           <div class="skill-tags">
-            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
             <span class="skill-tag">Python</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">Simulink</span>
             <span class="skill-tag">Git</span>
             <span class="skill-tag">Linux</span>
-            <span class="skill-tag">Hamlib / GPredict</span>
+            <span class="skill-tag">Hamlib</span>
+            <span class="skill-tag">GPredict</span>
           </div>
         </div>
         <div class="skill-category">
@@ -177,7 +196,8 @@ layout: default
             <span class="skill-tag">Rapid Prototyping</span>
             <span class="skill-tag">Mechanical Assembly</span>
             <span class="skill-tag">System Integration</span>
-            <span class="skill-tag">TVAC &amp; Vibration Testing</span>
+            <span class="skill-tag">TVAC Testing</span>
+            <span class="skill-tag">Vibration Testing</span>
           </div>
         </div>
       </div>
