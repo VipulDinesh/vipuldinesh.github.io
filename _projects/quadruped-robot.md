@@ -4,9 +4,11 @@ order: 1
 title: "12-DOF Quadruped Robot"
 description: "An approximately 8 kg quadruped developed from mechanical platform through ROS 2 locomotion control, achieving stable walking and trotting gaits at 0.3 m/s."
 date: 2026-08-01
-categories: [Robotics, Mechanical Design, Systems Integration, ROS 2]
+categories: [Robotics, Mechanical Systems, Embedded & Control, Robot Software & Simulation, Systems Integration]
 featured: true
 featured_image: "/assets/images/projects/quadruped/featured.png"
+featured_fit: "contain"
+featured_position: "50% 50%"
 ---
 
 Developed as a Mechatronics R&D project at GiftdMinds, this quadruped is a complete electromechanical system rather than a software-only exercise. I designed and built the 12-DOF, approximately 8 kg platform and developed the locomotion stack that drives it.

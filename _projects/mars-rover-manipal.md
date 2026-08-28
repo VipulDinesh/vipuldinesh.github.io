@@ -4,9 +4,11 @@ order: 2
 title: "Mars Rover Manipal"
 description: "Mechanical design, manufacturing, and systems integration across a competition Mars rover—including its arm, drives, chassis, suspension, wheels, science module, and supporting operator software."
 date: 2025-09-01
-categories: [Robotics, Mechanical Design, Systems Integration, Manufacturing]
+categories: [Robotics, Mechanical Systems, Systems Integration]
 featured: true
 featured_image: "/assets/images/projects/mars-rover/featured.jpeg"
+featured_fit: "cover"
+featured_position: "50% 70%"
 ---
 
 From November 2022 to September 2025, I worked across the rover as a complete mechanical system and ultimately served as **Mechanical Design & Manufacturing Head**. My scope covered architecture, detailed design, fabrication, assembly, iteration, and competition deployment—not only one subsystem.

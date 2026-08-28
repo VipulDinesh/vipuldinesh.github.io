@@ -41,7 +41,8 @@ layout: default
         <div class="project-card-featured">
           <div class="project-media">
             {% if project.featured_image %}
-              <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" class="project-image">
+              <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" class="project-image"
+                style="object-fit: {{ project.featured_fit | default: 'cover' }}; object-position: {{ project.featured_position | default: '50% 50%' }};">
             {% elsif project.models.first %}
               <div class="model-preview-small">
                 <model-viewer 
@@ -67,9 +68,16 @@ layout: default
           
           <div class="project-info-featured">
             <div class="project-categories-small">
-              {% for category in project.categories limit:2 %}
-                <span class="category-tag-small">{{ category }}</span>
+              {% assign category_limit = 2 %}
+              {% for category in project.categories limit:category_limit %}
+                <span class="category-tag-small">{{ category | escape }}</span>
               {% endfor %}
+              {% assign remaining_category_count = project.categories.size | minus: category_limit %}
+              {% if remaining_category_count > 0 %}
+                {% assign remaining_categories = project.categories | slice: category_limit, remaining_category_count %}
+                <span class="category-tag-small category-more"
+                  title="Also: {{ remaining_categories | join: ', ' | escape }}">+{{ remaining_category_count }} more</span>
+              {% endif %}
             </div>
             
             <h3 class="project-title-featured">
@@ -120,39 +128,56 @@ layout: default
       <h2>Technical Expertise</h2>
       <div class="skills-grid">
         <div class="skill-category">
-          <h3><i class="fas fa-drafting-compass"></i> Mechanical Design</h3>
+          <h3><i class="fas fa-drafting-compass"></i> Mechanical Design &amp; Analysis</h3>
           <div class="skill-tags">
-            <span class="skill-tag">SolidWorks</span>
-            <span class="skill-tag">Fusion 360</span>
-            <span class="skill-tag">Creo</span>
+            <span class="skill-tag">SolidWorks / Fusion 360 / Creo</span>
             <span class="skill-tag">ANSYS FEA</span>
+            <span class="skill-tag">Mechanism &amp; Transmission Design</span>
+            <span class="skill-tag">Tolerance Analysis</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-microchip"></i> Actuation & Embedded</h3>
+          <h3><i class="fas fa-microchip"></i> Embedded &amp; Motion Systems</h3>
           <div class="skill-tags">
-            <span class="skill-tag">ESP32 / STM32</span>
-            <span class="skill-tag">Motor Sizing</span>
-            <span class="skill-tag">CAN / I²C / SPI</span>
-            <span class="skill-tag">Sensors & Power</span>
+            <span class="skill-tag">ESP32 / STM32 / Raspberry Pi</span>
+            <span class="skill-tag">Motor &amp; Actuator Sizing</span>
+            <span class="skill-tag">Stepper &amp; Servo Control</span>
+            <span class="skill-tag">Motor Drivers (DM542 / TB6600)</span>
+            <span class="skill-tag">I²C / SPI / UART / CAN</span>
+            <span class="skill-tag">IMU / Encoders / LiDAR</span>
+            <span class="skill-tag">Battery &amp; Power Systems</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-robot"></i> Robotics & Control</h3>
+          <h3><i class="fas fa-robot"></i> Robotics &amp; Autonomy</h3>
           <div class="skill-tags">
             <span class="skill-tag">ROS 2</span>
-            <span class="skill-tag">Inverse Kinematics</span>
+            <span class="skill-tag">Kinematics &amp; Inverse Kinematics</span>
             <span class="skill-tag">PID Control</span>
-            <span class="skill-tag">Gazebo / RViz / Nav2</span>
+            <span class="skill-tag">Gazebo / RViz</span>
+            <span class="skill-tag">Nav2</span>
+            <span class="skill-tag">MATLAB / Simulink</span>
           </div>
         </div>
         <div class="skill-category">
-          <h3><i class="fas fa-industry"></i> Build & Integration</h3>
+          <h3><i class="fas fa-code"></i> Software &amp; Engineering Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Hamlib / GPredict</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-industry"></i> Manufacturing &amp; Validation</h3>
           <div class="skill-tags">
             <span class="skill-tag">FDM 3D Printing</span>
             <span class="skill-tag">CAM</span>
             <span class="skill-tag">Rapid Prototyping</span>
-            <span class="skill-tag">System Validation</span>
+            <span class="skill-tag">Mechanical Assembly</span>
+            <span class="skill-tag">System Integration</span>
+            <span class="skill-tag">TVAC &amp; Vibration Testing</span>
           </div>
         </div>
       </div>

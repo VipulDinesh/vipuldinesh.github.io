@@ -1,12 +1,14 @@
 ---
 layout: project
 order: 3
-title: "Dual-Axis Satellite Tracker"
+title: "Az-El Dual Axis Satellite Tracker"
 description: "A full-sky azimuth–elevation tracking system with sub-degree pointing accuracy, coordinated stepper control, and live GPredict/Hamlib integration."
 date: 2026-08-01
-categories: [Mechanical Design, Embedded, Systems Integration, Precision Engineering]
+categories: [Mechanical Systems, Embedded & Control, Systems Integration, Precision & Validation]
 featured: true
 featured_image: "/assets/images/projects/satellite-tracker/featured.jpg"
+featured_fit: "contain"
+featured_position: "50% 50%"
 ---
 
 Developed at GiftdMinds, the tracker combines a mechanically balanced two-axis assembly with embedded motion control and live satellite-pointing commands. It can follow a low-Earth-orbit pass or point toward a geostationary satellite.

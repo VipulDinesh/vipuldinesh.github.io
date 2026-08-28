@@ -133,7 +133,7 @@ layout: default
 
                     <div class="project-categories-bottom">
                         {% for category in page.categories %}
-                        <span class="category-tag-small">{{ category }}</span>
+                        <span class="category-tag-small">{{ category | escape }}</span>
                         {% endfor %}
                     </div>
                 </div>

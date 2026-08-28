@@ -18,7 +18,7 @@ permalink: /projects/
         <div class="projects-filters" style="margin: 60px 0;">
             <button class="filter-btn active" data-filter="all">All Works</button>
             {% for category in site.project_categories %}
-                <button class="filter-btn" data-filter="{{ category.slug }}">{{ category.name }}</button>
+                <button class="filter-btn" data-filter="{{ category.slug }}">{{ category.name | escape }}</button>
             {% endfor %}
         </div>
         
@@ -35,7 +35,8 @@ permalink: /projects/
                     {% if project.featured_image %}
                         <img src="{{ project.featured_image | relative_url }}" 
                              alt="{{ project.title }}" 
-                             class="project-image">
+                             class="project-image"
+                             style="object-fit: {{ project.featured_fit | default: 'cover' }}; object-position: {{ project.featured_position | default: '50% 50%' }};">
                     {% elsif project.models.first %}
                         <div class="model-preview">
                             <model-viewer 
@@ -64,7 +65,7 @@ permalink: /projects/
                 <div class="project-info">
                     <div class="project-categories">
                         {% for category in project.categories %}
-                            <span class="category-tag">{{ category }}</span>
+                            <span class="category-tag">{{ category | escape }}</span>
                         {% endfor %}
                     </div>
                     

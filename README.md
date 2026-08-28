@@ -6,7 +6,7 @@ Personal engineering portfolio for [vipuldinesh.github.io](https://vipuldinesh.g
 
 - **12-DOF Quadruped Robot** — an approximately 8 kg platform with analytic inverse kinematics and ROS 2 locomotion control.
 - **Mars Rover Manipal** — end-to-end mechanical design, manufacturing, and integration across the rover platform and science module.
-- **Dual-Axis Satellite Tracker** — a full-sky, sub-degree pointing system with embedded GPredict/Hamlib integration.
+- **Az-El Dual Axis Satellite Tracker** — a full-sky, sub-degree pointing system with embedded GPredict/Hamlib integration.
 - **Precision Stewart Platform** — characterization and qualification support for satellite-telescope optical alignment.
 
 ## Development

@@ -382,6 +382,9 @@
 }
 
 .project-categories-small {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -394,9 +397,14 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-medium);
   border-radius: var(--radius-sm);
-  margin-right: var(--spacing-xs);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+.category-tag-small.category-more {
+  color: var(--primary-color);
+  background-color: transparent;
+  border-style: dashed;
 }
 
 .project-title-featured {

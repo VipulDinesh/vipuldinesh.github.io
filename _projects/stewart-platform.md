@@ -4,7 +4,7 @@ order: 4
 title: "Precision Stewart Platform Characterization"
 description: "Characterization and qualification support for a high-precision 6-DOF Stewart platform used to align optical components in a satellite telescope."
 date: 2025-07-01
-categories: [Precision Engineering, Robotics, Systems Integration, Testing]
+categories: [Systems Integration, Precision & Validation]
 featured: false
 ---
 

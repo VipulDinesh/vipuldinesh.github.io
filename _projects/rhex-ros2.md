@@ -4,7 +4,7 @@ order: 5
 title: "RHex Hexapod Simulation"
 description: "A ROS 2 Jazzy and Gazebo Harmonic simulation of an RHex-style six-legged robot, with a modular description, simulated environments, teleoperation, and tripod gait control."
 date: 2025-12-12
-categories: [Robotics, ROS 2, Simulation, Python]
+categories: [Robotics, Robot Software & Simulation]
 featured: false
 featured_image: "/assets/images/projects/rhex/featured.jpg"
 github_url: "https://github.com/VipulDinesh/RHex_ROS2"
