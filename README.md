@@ -1,12 +1,13 @@
 # Vipul Dinesh — Robotics & Mechatronics Portfolio
 
-Personal engineering portfolio for [vipuldinesh.github.io](https://vipuldinesh.github.io), documenting robotics software, simulation, control, and operator-interface projects.
+Personal engineering portfolio for [vipuldinesh.github.io](https://vipuldinesh.github.io), documenting robotics hardware, mechanical design, embedded control, and systems integration.
 
 ## Featured work
 
-- **RHex Hexapod Simulation** — ROS 2 Jazzy, Gazebo Harmonic, robot description, teleoperation, and tripod gait control.
-- **MRM Rover Operator Interface** — a PyGame-based rover control and monitoring interface.
-- **ROS 2 Robotics Lab** — hands-on experiments with nodes, launch systems, URDF, Gazebo, RViz, perception, and control.
+- **12-DOF Quadruped Robot** — an approximately 8 kg platform with analytic inverse kinematics and ROS 2 locomotion control.
+- **Mars Rover Manipal** — end-to-end mechanical design, manufacturing, and integration across the rover platform and science module.
+- **Dual-Axis Satellite Tracker** — a full-sky, sub-degree pointing system with embedded GPredict/Hamlib integration.
+- **Precision Stewart Platform** — characterization and qualification support for satellite-telescope optical alignment.
 
 ## Development
 

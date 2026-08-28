@@ -1,10 +1,11 @@
 ---
 layout: project
+published: false
 title: "MRM Rover Operator Interface"
 description: "A PyGame-based ground-control interface for monitoring and operating a rover, with controller input and configurable network endpoints for rover subsystems."
 date: 2024-05-18
 categories: [Robotics, Interfaces, Python]
-featured: true
+featured: false
 github_url: "https://github.com/VipulDinesh/MRM-Pygame-GUI"
 
 code_files:

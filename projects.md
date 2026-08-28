@@ -25,7 +25,7 @@ permalink: /projects/
         <!-- Projects Grid -->
         <div class="projects-grid" id="projects-grid">
             {% assign published_projects = site.projects | where_exp: "project", "project.published != false" %}
-            {% assign sorted_projects = published_projects | sort: "date" | reverse %}
+            {% assign sorted_projects = published_projects | sort: "order" %}
             {% for project in sorted_projects %}
             <article class="project-card" 
                      data-categories="{% for cat in project.categories %}{{ cat | slugify }} {% endfor %}">
@@ -78,28 +78,28 @@ permalink: /projects/
                         {% if project.models %}
                             <span class="feature-badge" title="3D Models">
                                 <i class="fas fa-cube"></i>
-                                {{ project.models.size }}
+                                {{ project.models.size }} models
                             </span>
                         {% endif %}
                         
                         {% if project.schematics %}
                             <span class="feature-badge" title="Schematics">
                                 <i class="fas fa-microchip"></i>
-                                {{ project.schematics.size }}
+                                {{ project.schematics.size }} schematics
                             </span>
                         {% endif %}
                         
                         {% if project.code_files %}
                             <span class="feature-badge" title="Code Files">
                                 <i class="fas fa-code"></i>
-                                {{ project.code_files.size }}
+                                {{ project.code_files.size }} code files
                             </span>
                         {% endif %}
                         
                         {% if project.gallery %}
                             <span class="feature-badge" title="Media">
                                 <i class="fas fa-images"></i>
-                                {{ project.gallery.size }}
+                                {{ project.gallery.size }} media items
                             </span>
                         {% endif %}
                     </div>

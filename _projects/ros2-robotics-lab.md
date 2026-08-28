@@ -1,10 +1,11 @@
 ---
 layout: project
+order: 6
 title: "ROS 2 Robotics Lab"
 description: "A hands-on ROS 2 workspace covering publishers and subscribers, launch systems, URDF robot models, Gazebo simulation, RViz, perception, and robot control experiments."
 date: 2024-11-13
 categories: [Robotics, ROS 2, Simulation, Python]
-featured: true
+featured: false
 github_url: "https://github.com/VipulDinesh/ROS2"
 
 code_files:
