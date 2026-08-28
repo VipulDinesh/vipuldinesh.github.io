@@ -10,10 +10,36 @@ class ParticleBackground {
 
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
+        this.animationFrame = null;
+        this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
         this.resize();
 
-        window.addEventListener('resize', () => this.resize());
-        this.animate();
+        window.addEventListener('resize', () => {
+            this.resize();
+            if (this.reducedMotion.matches) this.drawFrame(false);
+        });
+
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden && !this.reducedMotion.matches && !this.animationFrame) {
+                this.animate();
+            }
+        });
+
+        this.reducedMotion.addEventListener('change', (event) => {
+            if (event.matches) {
+                if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
+                this.animationFrame = null;
+                this.drawFrame(false);
+            } else if (!document.hidden) {
+                this.animate();
+            }
+        });
+
+        if (this.reducedMotion.matches) {
+            this.drawFrame(false);
+        } else {
+            this.animate();
+        }
     }
 
     resize() {
@@ -40,7 +66,7 @@ class ParticleBackground {
         }
     }
 
-    animate() {
+    drawFrame(updatePositions = true) {
         if (!this.ctx) return;
 
         this.ctx.clearRect(0, 0, this.width, this.height);
@@ -51,8 +77,10 @@ class ParticleBackground {
 
         // Update and draw particles
         this.particles.forEach(particle => {
-            particle.x += particle.vx;
-            particle.y += particle.vy;
+            if (updatePositions) {
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+            }
 
             // Wrap around edges
             if (particle.x < 0) particle.x = this.width;
@@ -66,8 +94,16 @@ class ParticleBackground {
             this.ctx.fillStyle = particleColor;
             this.ctx.fill();
         });
+    }
 
-        requestAnimationFrame(() => this.animate());
+    animate() {
+        if (document.hidden || this.reducedMotion.matches) {
+            this.animationFrame = null;
+            return;
+        }
+
+        this.drawFrame();
+        this.animationFrame = requestAnimationFrame(() => this.animate());
     }
 }
 

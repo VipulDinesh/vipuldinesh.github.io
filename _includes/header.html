@@ -12,7 +12,8 @@
                     {% for nav_item in site.navigation %}
                     <li class="nav-item">
                         <a href="{{ nav_item.url | relative_url }}"
-                            class="nav-link {% if page.url == nav_item.url %}active{% endif %}">
+                            class="nav-link {% if page.url == nav_item.url %}active{% endif %}"
+                            {% if page.url == nav_item.url %}aria-current="page"{% endif %}>
                             {{ nav_item.title }}
                         </a>
                     </li>
@@ -25,7 +26,7 @@
                     <i class="fas fa-moon"></i>
                 </button>
 
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>

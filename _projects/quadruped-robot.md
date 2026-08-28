@@ -6,7 +6,8 @@ description: "An approximately 8 kg quadruped developed from mechanical platform
 date: 2026-08-01
 categories: [Robotics, Mechanical Systems, Embedded & Control, Robot Software & Simulation, Systems Integration]
 featured: true
-featured_image: "/assets/images/projects/quadruped/featured.png"
+featured_image: "/assets/images/projects/quadruped/featured.webp"
+image: "/assets/images/projects/quadruped/featured.webp"
 featured_fit: "contain"
 featured_position: "50% 50%"
 ---

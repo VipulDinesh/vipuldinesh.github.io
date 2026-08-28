@@ -10,14 +10,14 @@ layout: default
 
             <div class="project-meta">
                 {% if page.github_url %}
-                <a href="{{ page.github_url }}" class="btn-github" target="_blank">
+                <a href="{{ page.github_url }}" class="btn-github" target="_blank" rel="noopener">
                     <i class="fab fa-github"></i> View on GitHub
                 </a>
                 {% endif %}
 
                 {% if page.demo_url %}
-                <a href="{{ page.demo_url }}" class="btn-demo" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
+                <a href="{{ page.demo_url }}" class="btn-demo" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i> {{ page.demo_label | default: "Live Demo" }}
                 </a>
                 {% endif %}
             </div>
@@ -28,12 +28,8 @@ layout: default
 <div class="project-content">
     <div class="container">
 
-        <div class="project-header-simple">
-            <h1 class="project-title-simple">{{ page.title }}</h1>
-        </div>
-
         {% assign has_project_media = false %}
-        {% if page.models or page.gallery or page.visualizations or page.custom_plot or page.interactive_plot or page.schematics %}
+        {% if page.featured_image or page.models or page.gallery or page.visualizations or page.custom_plot or page.interactive_plot or page.schematics %}
         {% assign has_project_media = true %}
         {% endif %}
         <div class="project-split-layout{% unless has_project_media %} single-column{% endunless %}">
@@ -42,9 +38,8 @@ layout: default
 
                 <!-- Overview / Description -->
                 <section class="project-section-clean" id="description">
-                    <h3>Overview</h3>
+                    <h2>Overview</h2>
                     <div class="project-description-content">
-                        <p class="project-lead">{{ page.description }}</p>
                         {{ content }}
                     </div>
                 </section>
@@ -67,7 +62,7 @@ layout: default
                                             <span class="lang-tag">{{ code_file.language }}</span>
                                             {% if code_file.download_url %}
                                             <a href="{{ code_file.download_url }}" class="file-download-icon" download
-                                                title="Download"><i class="fas fa-download"></i></a>
+                                                title="Download" aria-label="Download {{ code_file.name }}"><i class="fas fa-download"></i></a>
                                             {% endif %}
                                         </div>
                                     </summary>
@@ -79,7 +74,7 @@ layout: default
                                 <div class="code-file-item">
                                     <i class="fas fa-code"></i> {{ code_file.name }}
                                     {% if code_file.download_url %}
-                                    <a href="{{ code_file.download_url }}" download><i class="fas fa-download"></i></a>
+                                    <a href="{{ code_file.download_url }}" download aria-label="Download {{ code_file.name }}"><i class="fas fa-download"></i></a>
                                     {% endif %}
                                 </div>
                                 {% endif %}
@@ -93,7 +88,7 @@ layout: default
                 <!-- Components & Materials -->
                 {% if page.components %}
                 <section class="project-section-clean" id="components" style="margin-top: var(--spacing-lg);">
-                    <h3>Components & Materials</h3>
+                    <h2>Components & Materials</h2>
                     <table class="components-table">
                         <thead>
                             <tr>
@@ -119,14 +114,14 @@ layout: default
 
                     <div class="project-actions-small">
                         {% if page.github_url %}
-                        <a href="{{ page.github_url }}" class="btn-small" target="_blank">
+                        <a href="{{ page.github_url }}" class="btn-small" target="_blank" rel="noopener">
                             <i class="fab fa-github"></i> GitHub
                         </a>
                         {% endif %}
 
                         {% if page.demo_url %}
-                        <a href="{{ page.demo_url }}" class="btn-small" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Demo
+                        <a href="{{ page.demo_url }}" class="btn-small" target="_blank" rel="noopener">
+                            <i class="fas fa-external-link-alt"></i> {{ page.demo_label | default: "Demo" }}
                         </a>
                         {% endif %}
                     </div>
@@ -144,7 +139,15 @@ layout: default
             {% if has_project_media %}
             <div class="project-right-panel">
 
-
+                {% if page.featured_image %}
+                <figure class="project-featured-visual">
+                    <img src="{{ page.featured_image | relative_url }}"
+                        alt="{{ page.title }}"
+                        fetchpriority="high"
+                        decoding="async"
+                        style="object-fit: {{ page.featured_fit | default: 'cover' }}; object-position: {{ page.featured_position | default: '50% 50%' }};">
+                </figure>
+                {% endif %}
 
                 <!-- 3D Models Section -->
                 {% if page.models %}
@@ -178,7 +181,7 @@ layout: default
                             </video>
                             {% else %}
                             <img src="{{ media.file | relative_url }}"
-                                alt="{{ media.description | default: page.title }}" class="gallery-image" data-zoomable>
+                                alt="{{ media.description | default: page.title }}" class="gallery-image" loading="lazy" decoding="async" data-zoomable>
                             {% endif %}
                             {% if media.description %}
                             <p class="media-caption">{{ media.description }}</p>
@@ -206,14 +209,8 @@ layout: default
                 </section>
                 {% endif %}
 
-                <!-- Plotly for custom plots -->
-                {% if page.custom_plot %}
-                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-                {% endif %}
-
                 <!-- Interactive Data Plot (only if page has interactive_plot: true) -->
                 {% if page.interactive_plot %}
-                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
                 <div class="project-media-group">
                     {% include interactive-plot.html %}
                 </div>
@@ -235,7 +232,7 @@ layout: default
                         <div class="schematic-container">
                             <img src="{{ schematic.file | relative_url }}"
                                 alt="{{ schematic.description | default: 'Circuit Schematic' }}"
-                                class="schematic-image">
+                                class="schematic-image" loading="lazy" decoding="async">
                         </div>
                         {% endfor %}
                     </div>
@@ -262,10 +259,12 @@ layout: default
 
         <div class="nav-links">
             {% if current_index > 1 %}
-            {% assign prev_project = project_array[current_index | minus: 2] %}
+            {% assign prev_index = current_index | minus: 2 %}
+            {% assign prev_project = project_array[prev_index] %}
             <a href="{{ prev_project.url | relative_url }}" class="nav-link prev">
                 <i class="fas fa-chevron-left"></i>
-                <span>{{ prev_project.title }}</span>
+                <span class="nav-project-title">{{ prev_project.title }}</span>
+                <span class="nav-direction">Previous</span>
             </a>
             {% endif %}
 
@@ -276,7 +275,8 @@ layout: default
 
             {% if current_index < project_array.size %} {% assign next_project=project_array[current_index] %} <a
                 href="{{ next_project.url | relative_url }}" class="nav-link next">
-                <span>{{ next_project.title }}</span>
+                <span class="nav-project-title">{{ next_project.title }}</span>
+                <span class="nav-direction">Next</span>
                 <i class="fas fa-chevron-right"></i>
                 </a>
                 {% endif %}

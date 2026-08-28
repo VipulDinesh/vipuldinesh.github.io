@@ -1,13 +1,15 @@
 ---
 layout: default
 title: Projects
+description: "Robotics and precision systems spanning mechanical design, embedded control, software, integration, and validation."
+image: "/assets/images/social-preview.png"
 permalink: /projects/
 ---
 
 <div class="projects-hero" style="padding: 100px 0; background: var(--background-color); border-bottom: 1px solid var(--border-color);">
     <div class="container">
-        <h1 style="color: var(--text-primary); font-size: var(--font-size-3xl); letter-spacing: -0.02em;">Archive</h1>
-        <p style="color: var(--text-secondary); opacity: 0.7; max-width: 600px; margin: 0 auto; font-weight: 300;">An index of robotics research, engineering prototypes, and design systems developed over the years.</p>
+        <h1 style="color: var(--text-primary); font-size: var(--font-size-3xl); letter-spacing: -0.02em;">Projects</h1>
+        <p style="color: var(--text-secondary); opacity: 0.7; max-width: 600px; margin: 0 auto; font-weight: 300;">Robotics and precision systems spanning mechanical design, embedded control, software, integration, and validation.</p>
     </div>
 </div>
 
@@ -16,9 +18,9 @@ permalink: /projects/
         
         <!-- Filter Buttons -->
         <div class="projects-filters" style="margin: 60px 0;">
-            <button class="filter-btn active" data-filter="all">All Works</button>
+            <button class="filter-btn active" data-filter="all" aria-pressed="true">All Projects</button>
             {% for category in site.project_categories %}
-                <button class="filter-btn" data-filter="{{ category.slug }}">{{ category.name | escape }}</button>
+                <button class="filter-btn" data-filter="{{ category.slug }}" aria-pressed="false">{{ category.name | escape }}</button>
             {% endfor %}
         </div>
         
@@ -36,6 +38,8 @@ permalink: /projects/
                         <img src="{{ project.featured_image | relative_url }}" 
                              alt="{{ project.title }}" 
                              class="project-image"
+                             loading="lazy"
+                             decoding="async"
                              style="object-fit: {{ project.featured_fit | default: 'cover' }}; object-position: {{ project.featured_position | default: '50% 50%' }};">
                     {% elsif project.models.first %}
                         <div class="model-preview">
@@ -49,7 +53,7 @@ permalink: /projects/
                         </div>
                     {% else %}
                         <div class="project-placeholder">
-                            <i class="fas fa-robot"></i>
+                            <i class="{{ project.placeholder_icon | default: 'fas fa-robot' }}"></i>
                         </div>
                     {% endif %}
                     
@@ -69,9 +73,9 @@ permalink: /projects/
                         {% endfor %}
                     </div>
                     
-                    <h3 class="project-title">
+                    <h2 class="project-title">
                         <a href="{{ project.url | relative_url }}">{{ project.title }}</a>
-                    </h3>
+                    </h2>
                     
                     <p class="project-excerpt">{{ project.description | truncate: 120 }}</p>
                     
@@ -114,7 +118,7 @@ permalink: /projects/
                         {% endif %}
                         
                         {% if project.github_url %}
-                            <a href="{{ project.github_url }}" class="github-link" target="_blank">
+                            <a href="{{ project.github_url }}" class="github-link" target="_blank" rel="noopener" aria-label="View {{ project.title }} on GitHub">
                                 <i class="fab fa-github"></i>
                             </a>
                         {% endif %}
@@ -151,8 +155,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const filter = this.getAttribute('data-filter');
             
             // Update active button
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
             
             // Filter projects
             projectCards.forEach(card => {

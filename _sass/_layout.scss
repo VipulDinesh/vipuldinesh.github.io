@@ -161,63 +161,34 @@ a.nav-link.active::after {
 
 /* Footer */
 .site-footer {
-  background: linear-gradient(180deg, var(--surface-color) 0%, #0a0a0a 100%);
-  border-top: 2px solid var(--border-color);
+  background: var(--surface-color);
+  border-top: 1px solid var(--border-color);
   margin-top: var(--spacing-3xl);
-  padding: var(--spacing-3xl) 0;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-    opacity: 0.5;
-  }
+  padding: var(--spacing-2xl) 0;
 }
 
 .footer-simple {
   text-align: center;
   max-width: 600px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
 }
 
 .footer-brand {
-  margin-bottom: var(--spacing-xl);
-  padding: var(--spacing-lg);
-  border: 1px solid var(--border-color);
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(5px);
-  border-radius: var(--radius-md);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: var(--spacing-lg);
 }
 
 .mesgro-title {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-size: 2.5rem;
-  letter-spacing: 0.2em;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.04em;
   color: var(--text-primary);
-  margin-bottom: var(--spacing-sm);
-  text-transform: uppercase;
-  background: linear-gradient(45deg, var(--text-primary), var(--text-secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
+  margin-bottom: var(--spacing-xs);
+  font-weight: var(--font-weight-semibold);
 }
 
 .mesgro-definition {
-  font-family: 'Inter', sans-serif;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.02em;
   line-height: 1.6;
 }
 
@@ -232,7 +203,7 @@ a.nav-link.active::after {
   display: flex;
   justify-content: center;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 .social-links-center a {
@@ -258,8 +229,6 @@ a.nav-link.active::after {
 
 .footer-credits {
   text-align: center;
-  border-top: 1px solid var(--border-color);
-  padding-top: var(--spacing-lg);
 }
 
 .footer-credits p {

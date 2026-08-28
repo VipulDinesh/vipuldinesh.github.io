@@ -6,8 +6,9 @@ description: "Mechanical design, manufacturing, and systems integration across a
 date: 2025-09-01
 categories: [Robotics, Mechanical Systems, Systems Integration]
 featured: true
-featured_image: "/assets/images/projects/mars-rover/featured.jpeg"
-featured_fit: "cover"
+featured_image: "/assets/images/projects/mars-rover/featured.webp"
+image: "/assets/images/projects/mars-rover/featured.webp"
+featured_fit: "contain"
 featured_position: "50% 70%"
 ---
 

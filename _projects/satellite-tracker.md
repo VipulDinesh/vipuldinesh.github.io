@@ -6,7 +6,8 @@ description: "A full-sky azimuth–elevation tracking system with sub-degree poi
 date: 2026-08-01
 categories: [Mechanical Systems, Embedded & Control, Systems Integration, Precision & Validation]
 featured: true
-featured_image: "/assets/images/projects/satellite-tracker/featured.jpg"
+featured_image: "/assets/images/projects/satellite-tracker/featured.webp"
+image: "/assets/images/projects/satellite-tracker/featured.webp"
 featured_fit: "contain"
 featured_position: "50% 50%"
 ---

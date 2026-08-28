@@ -2,6 +2,7 @@
 layout: default
 title: About
 description: "About Vipul Dinesh, a final-year Mechatronics Engineering student focused on robotics hardware, mechanical design, embedded control, and systems integration."
+image: "/assets/images/social-preview.png"
 permalink: /about/
 ---
 
@@ -13,6 +14,7 @@ permalink: /about/
       <p class="about-intro">Final-year B.Tech Mechatronics Engineering student at Manipal Institute of Technology, with a minor in Robotics and experience in mechanical design, manufacturing, embedded control, ROS 2, and system validation.</p>
       <div class="about-actions">
         <a class="btn-primary" href="{{ '/projects/' | relative_url }}">View projects</a>
+        <a class="btn-secondary" href="{{ site.resume_url | relative_url }}" target="_blank" rel="noopener">Résumé</a>
         <a class="btn-secondary" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
         <a class="btn-secondary" href="mailto:{{ site.email }}">Email</a>
       </div>

@@ -26,27 +26,29 @@ class MESGROApp {
         
         if (!mobileToggle || !siteNav) return;
 
+        const setMenuState = (isOpen) => {
+            mobileToggle.classList.toggle('active', isOpen);
+            siteNav.classList.toggle('active', isOpen);
+            document.body.classList.toggle('menu-open', isOpen);
+            mobileToggle.setAttribute('aria-expanded', String(isOpen));
+            mobileToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        };
+
         mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            siteNav.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
+            setMenuState(!siteNav.classList.contains('active'));
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!mobileToggle.contains(e.target) && !siteNav.contains(e.target)) {
-                mobileToggle.classList.remove('active');
-                siteNav.classList.remove('active');
-                document.body.classList.remove('menu-open');
+                setMenuState(false);
             }
         });
 
         // Close menu on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                mobileToggle.classList.remove('active');
-                siteNav.classList.remove('active');
-                document.body.classList.remove('menu-open');
+                setMenuState(false);
             }
         });
     }
@@ -83,6 +85,8 @@ class MESGROApp {
             } else {
                 themeIcon.classList.add('fa-moon'); // Moon icon for light mode (switch to dark)
             }
+
+            themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
         };
 
         // Initial icon update

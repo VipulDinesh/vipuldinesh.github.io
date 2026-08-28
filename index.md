@@ -1,5 +1,6 @@
 ---
 layout: default
+image: "/assets/images/social-preview.png"
 ---
 
 <div class="hero-personal">
@@ -14,6 +15,9 @@ layout: default
         <div class="hero-actions">
           <a href="{{ '/about/' | relative_url }}" class="btn-secondary">
             About
+          </a>
+          <a href="{{ site.resume_url | relative_url }}" class="btn-secondary" target="_blank" rel="noopener">
+            Résumé
           </a>
            <a href="mailto:{{ site.email }}" class="btn-secondary">
             Contact
@@ -39,6 +43,7 @@ layout: default
           <div class="project-media">
             {% if project.featured_image %}
               <img src="{{ project.featured_image | relative_url }}" alt="{{ project.title }}" class="project-image"
+                {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async"
                 style="object-fit: {{ project.featured_fit | default: 'cover' }}; object-position: {{ project.featured_position | default: '50% 50%' }};">
             {% elsif project.models.first %}
               <div class="model-preview-small">
@@ -57,7 +62,7 @@ layout: default
             {% endif %}
             
             <div class="project-overlay">
-              <a href="{{ project.url | relative_url }}" class="project-link-overlay">
+              <a href="{{ project.url | relative_url }}" class="project-link-overlay" aria-label="View {{ project.title }}">
                 <i class="fas fa-arrow-right"></i>
               </a>
             </div>

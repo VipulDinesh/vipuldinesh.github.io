@@ -218,12 +218,15 @@
 }
 
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--spacing-xl);
 }
 
 .skill-category {
+  flex: 1 1 250px;
+  max-width: calc((100% - (2 * var(--spacing-xl))) / 3);
   background-color: var(--background-color);
   padding: var(--spacing-xl);
   border-radius: var(--radius-lg);
@@ -494,6 +497,20 @@
   color: white;
   padding: var(--spacing-lg) 0;
   text-align: center;
+}
+
+.project-hero {
+  background: var(--surface-color);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-hero .project-title {
+  color: var(--text-primary);
+}
+
+.project-hero .project-description {
+  color: var(--text-secondary);
 }
 
 .projects-hero .hero-title,

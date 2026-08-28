@@ -525,6 +525,7 @@
   line-height: var(--line-height-relaxed);
 }
 
+.project-description-content h2,
 .project-description-content h3,
 .project-description-content h4 {
   color: var(--text-primary);
@@ -631,6 +632,21 @@
   gap: var(--spacing-xl);
 }
 
+.project-featured-visual {
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.project-featured-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* Header Simple */
 .project-header-simple {
   padding: var(--spacing-xl) 0 0 0;
@@ -644,7 +660,8 @@
 }
 
 /* Clean Section Typography */
-.project-section-clean h3 {
+.project-section-clean > h2,
+.project-section-clean > h3 {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -895,6 +912,10 @@ details.code-details .code-links-compact {
   display: inline-block;
 }
 
+.nav-direction {
+  display: none !important;
+}
+
 .nav-link.all-projects {
   background: var(--surface-color);
   color: var(--text-primary);
@@ -1060,57 +1081,4 @@ details.assembly-details .assembly-content {
 details.assembly-details .assembly-content h3,
 details.assembly-details .assembly-content h4 {
   margin-top: 0;
-}
-
-/* Dynamic Section Dropdowns (JS Generated) */
-details.section-details {
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: var(--spacing-md);
-  background: var(--surface-color);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
-}
-
-details.section-details summary.section-summary {
-  padding: var(--spacing-md);
-  cursor: pointer;
-  background: var(--background-color);
-  font-weight: 600;
-  font-size: 1.1rem;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background-color 0.2s;
-  color: var(--text-primary);
-  border-radius: var(--radius-md);
-}
-
-details.section-details[open] summary.section-summary {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom: 1px solid var(--border-color);
-}
-
-details.section-details summary.section-summary:hover {
-  background-color: var(--surface-color-hover);
-}
-
-details.section-details summary.section-summary::-webkit-details-marker {
-  display: none;
-}
-
-details.section-details summary.section-summary::after {
-  content: '+';
-  font-weight: bold;
-}
-
-details.section-details[open] summary.section-summary::after {
-  content: '-';
-}
-
-details.section-details .section-content {
-  padding: var(--spacing-lg);
-  color: var(--text-secondary);
-  line-height: 1.6;
 }

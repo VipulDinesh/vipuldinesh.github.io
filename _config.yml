@@ -7,7 +7,7 @@ author: "Vipul Dinesh"
 email: "vipuldinesh11@gmail.com"
 github_username: "VipulDinesh"
 linkedin_username: "vipul-dinesh"
-twitter_username: ""
+resume_url: "/Vipul_Dinesh_Robotics_Engineer_Resume.pdf"
 
 # Build settings
 markdown: kramdown
@@ -46,6 +46,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - README.md
+  - scripts/README.md
   - CHANGELOG.md
   - CONTRIBUTING.md
   - LICENSE

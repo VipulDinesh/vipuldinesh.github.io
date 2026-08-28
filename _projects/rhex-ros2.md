@@ -6,9 +6,12 @@ description: "A ROS 2 Jazzy and Gazebo Harmonic simulation of an RHex-style six-
 date: 2025-12-12
 categories: [Robotics, Robot Software & Simulation]
 featured: false
-featured_image: "/assets/images/projects/rhex/featured.jpg"
+featured_image: "/assets/images/projects/rhex/featured.webp"
+image: "/assets/images/projects/rhex/featured.webp"
+featured_fit: "contain"
 github_url: "https://github.com/VipulDinesh/RHex_ROS2"
 demo_url: "https://youtu.be/xTXKbNmbx6I"
+demo_label: "Watch Demo"
 
 code_files:
   - name: "Tripod Gait Controller"

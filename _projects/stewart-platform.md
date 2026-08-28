@@ -6,6 +6,7 @@ description: "Characterization and qualification support for a high-precision 6-
 date: 2025-07-01
 categories: [Systems Integration, Precision & Validation]
 featured: false
+placeholder_icon: "fas fa-crosshairs"
 ---
 
 During a research internship at the Space Applications Centre, ISRO, I worked with a six-degree-of-freedom Stewart platform used for precision alignment of optical components in a satellite telescope.
