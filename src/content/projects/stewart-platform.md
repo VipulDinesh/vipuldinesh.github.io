@@ -25,10 +25,10 @@ At the Space Applications Centre, ISRO, I worked with a six-degree-of-freedom St
 
 ## Precision capability
 
-The platform is capable of **sub-100 µm linear accuracy** and **sub-10 arcsecond angular accuracy**. Characterizing motion at that scale required careful attention to the complete measurement and alignment chain, not only the commanded actuator positions.
+The platform is capable of **sub-100 µm linear accuracy** and **sub-10 arcsecond angular accuracy**. Characterization covered both commanded actuator positions and the associated measurement and alignment chain.
 
 ## Qualification support
 
 I supported thermal-vacuum and vibration qualification cycles used to validate platform performance under launch and space-environment conditions.
 
-This work strengthened my experience with precision mechanisms, experimental characterization, verification, and disciplined engineering documentation. Detailed imagery and data are not published because the project was completed in a research environment.
+My work covered precision mechanisms, experimental characterization, verification, and technical documentation. Detailed imagery and data are not published because the project was completed in a research environment.

@@ -26,7 +26,7 @@ technologies:
 
 ## Engineering objective
 
-Develop a complete quadruped platform whose mechanics, actuation, computation, and control operate as one maintainable robot—not a CAD model and software demonstration developed in isolation.
+Develop an approximately 8 kg quadruped platform covering mechanical design, actuation, onboard computation, and ROS 2 locomotion control.
 
 ## My contribution
 
@@ -36,7 +36,7 @@ I designed and built the 12-DOF, approximately 8 kg mechanical platform and deve
 
 I derived an analytic inverse-kinematics solution that converts desired foot positions into real-time joint targets. The control architecture coordinates four legs, generates pose commands, and sequences walking and trotting gaits on a Raspberry Pi 5.
 
-The engineering challenge was not simply calculating joint angles. Mechanical offsets, actuator behaviour, frame conventions, gait timing, and contact with the floor all had to agree on the physical platform.
+Physical testing required the mechanical offsets, actuator behaviour, frame conventions, gait timing, and ground contact assumptions to match the implemented control model.
 
 ## Validated result
 

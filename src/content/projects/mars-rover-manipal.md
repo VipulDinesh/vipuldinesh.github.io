@@ -26,7 +26,7 @@ technologies:
 
 ## Engineering scope
 
-I worked across the rover as a complete mechanical system and ultimately served as **Mechanical Design & Manufacturing Head**. My scope covered architecture, detailed design, fabrication, assembly, iteration, and competition deployment—not only one subsystem.
+I ultimately served as **Mechanical Design & Manufacturing Head**. My scope covered rover architecture, detailed design, fabrication, assembly, iteration, and competition deployment across multiple mechanical subsystems.
 
 ## Rover systems
 

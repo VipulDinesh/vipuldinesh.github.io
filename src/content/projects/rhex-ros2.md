@@ -38,7 +38,7 @@ The workspace separates the robot into three focused ROS 2 packages: `rhex_descr
 
 ## Control strategy
 
-Tripod gait divides the legs into two alternating groups, maintaining three points of contact while the other three legs advance. The controller coordinates joint targets across all six legs and exposes the motion through ROS 2, providing a base for future gait comparisons and feedback-driven locomotion.
+Tripod gait divides the legs into two alternating groups, maintaining three points of contact while the other three legs advance. The controller coordinates joint targets across all six legs and exposes the motion through ROS 2. The package structure supports further gait comparison and feedback-control work.
 
 ## Demonstration
 

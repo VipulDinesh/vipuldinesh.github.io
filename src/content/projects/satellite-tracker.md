@@ -37,7 +37,7 @@ The ESP32 firmware drives both axes concurrently using non-blocking motion contr
 
 ## Systems integration
 
-The mechanical coordinate system, step resolution, motion limits, firmware state, and GPredict data stream all had to share one consistent definition. The result is a single integrated pointing instrument rather than separate mechanism and firmware demonstrations.
+I aligned the mechanical coordinate system, step resolution, motion limits, firmware state, and GPredict data stream so commanded pointing angles produced the intended physical motion.
 
 ## Validated result
 
