@@ -7,18 +7,18 @@ permalink: /about/
 
 <div class="about-hero">
   <div class="container about-hero-grid">
-    <div>
+    <div class="about-hero-copy">
       <p class="about-eyebrow">About</p>
-      <h1>I build at the intersection of mechanisms, electronics, and software.</h1>
-      <p class="about-intro">I'm Vipul Dinesh, a final-year B.Tech Mechatronics Engineering student at Manipal Institute of Technology with a minor specialization in Robotics. I build electromechanical systems from CAD and analysis through fabrication, embedded control, and deployment.</p>
+      <h1>Robotics and Mechatronics Engineer</h1>
+      <p class="about-intro">Final-year B.Tech Mechatronics Engineering student at Manipal Institute of Technology, with a minor in Robotics and experience in mechanical design, manufacturing, embedded control, ROS 2, and system validation.</p>
       <div class="about-actions">
-        <a class="btn-primary" href="{{ '/projects/' | relative_url }}">Explore my work</a>
+        <a class="btn-primary" href="{{ '/projects/' | relative_url }}">View projects</a>
         <a class="btn-secondary" href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn-secondary" href="mailto:{{ site.email }}">Email me</a>
+        <a class="btn-secondary" href="mailto:{{ site.email }}">Email</a>
       </div>
     </div>
-    <aside class="about-focus-card" aria-label="Current focus">
-      <p class="about-card-label">Current focus</p>
+    <aside class="about-focus-card" aria-label="Core competencies">
+      <p class="about-card-label">Core competencies</p>
       <ul>
         <li><span>01</span> Robotics hardware</li>
         <li><span>02</span> Mechanism and actuation design</li>
@@ -33,12 +33,12 @@ permalink: /about/
   <div class="container">
     <section class="about-story-grid">
       <div>
-        <p class="about-eyebrow">Approach</p>
-        <h2>From mechanism to dependable system</h2>
+        <p class="about-eyebrow">Experience</p>
+        <h2>Engineering scope</h2>
       </div>
       <div class="about-copy">
-        <p>My work spans mechanical architecture, CAD and FEA, motor and transmission sizing, rapid fabrication, embedded firmware, and ROS 2 control. I am most interested in the interfaces between those disciplines, where otherwise good subsystems have to work together reliably.</p>
-        <p>I led mechanical design and manufacturing for Mars Rover Manipal during back-to-back International Rover Challenge wins, and I now develop robotics and precision-tracking systems as a Mechatronics R&amp;D intern at GiftdMinds.</p>
+        <p>My experience covers mechanical architecture, CAD and FEA, motor and transmission sizing, prototyping, embedded firmware, ROS 2, and verification. I work across subsystem boundaries to translate engineering requirements into integrated, testable hardware.</p>
+        <p>I led mechanical design and manufacturing at Mars Rover Manipal during consecutive International Rover Challenge wins. At GiftdMinds, I work on robotic platforms and precision motion systems as a Mechatronics R&amp;D intern.</p>
       </div>
     </section>
 
@@ -54,8 +54,8 @@ permalink: /about/
 
     <section class="about-contact-band">
       <div>
-        <p class="about-eyebrow">Let's connect</p>
-        <h2>Interested in robotics, simulation, or mechatronics?</h2>
+        <p class="about-eyebrow">Contact</p>
+        <h2>For engineering opportunities and technical collaboration.</h2>
       </div>
       <a class="btn-primary" href="https://www.linkedin.com/in/{{ site.linkedin_username }}/" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </section>

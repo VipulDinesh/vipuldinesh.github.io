@@ -898,23 +898,27 @@
 
 /* Personal about page */
 .about-hero {
-  padding: clamp(4rem, 9vw, 8rem) 0;
+  padding: clamp(3.5rem, 7vw, 6.5rem) 0;
   border-bottom: 1px solid var(--border-color);
 }
 
 .about-hero-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
-  align-items: end;
-  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.75fr);
+  align-items: center;
+  gap: clamp(2.5rem, 7vw, 7rem);
+}
+
+.about-hero-copy {
+  max-width: 720px;
 }
 
 .about-hero h1 {
-  max-width: 850px;
-  margin-bottom: var(--spacing-xl);
-  font-size: clamp(2.5rem, 6vw, 5.2rem);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+  max-width: 700px;
+  margin-bottom: var(--spacing-lg);
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
 }
 
 .about-eyebrow,
@@ -928,9 +932,9 @@
 }
 
 .about-intro {
-  max-width: 760px;
-  font-size: clamp(1.05rem, 2vw, 1.3rem);
-  line-height: 1.75;
+  max-width: 680px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.65;
 }
 
 .about-actions {
