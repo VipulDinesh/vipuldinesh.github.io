@@ -2,16 +2,16 @@
 title: "12-DOF Quadruped Robot"
 order: 1
 featured: true
-description: "An approximately 8 kg quadruped developed from mechanical platform through ROS 2 locomotion control, achieving stable walking and trotting gaits at 0.3 m/s."
+description: "A 5 kg quadruped developed from mechanical platform through ROS 2 locomotion control, achieving stable walking and trotting gaits at 0.3 m/s."
 organization: "GiftdMinds"
 role: "Mechanical design, integration, and locomotion control"
-period: "December 2025 – Present"
+period: "December 2025 – July 2026"
 image: "/assets/images/projects/quadruped/featured.webp"
 imageAlt: "Front view of the completed 12-DOF quadruped robot"
 demoUrl: "https://youtu.be/uoGV0OVlEwQ"
 metrics:
   - "12 actuated DOF"
-  - "Approximately 8 kg"
+  - "5 kg"
   - "0.3 m/s walking and trotting"
   - "Raspberry Pi 5 + ROS 2"
 technologies:
@@ -26,11 +26,11 @@ technologies:
 
 ## Engineering objective
 
-Develop an approximately 8 kg quadruped platform covering mechanical design, actuation, onboard computation, and ROS 2 locomotion control.
+Develop a 5 kg quadruped platform covering mechanical design, actuation, onboard computation, and ROS 2 locomotion control.
 
 ## My contribution
 
-I designed and built the 12-DOF, approximately 8 kg mechanical platform and developed the locomotion stack that drives it. My work covered mechanical architecture, integration, analytic inverse kinematics, ROS 2 control, gait sequencing, and iterative physical tuning.
+I designed and built the 12-DOF, 5 kg mechanical platform and developed the locomotion stack that drives it. My work covered mechanical architecture, integration, analytic inverse kinematics, ROS 2 control, gait sequencing, and iterative physical tuning.
 
 ## Locomotion approach
 
