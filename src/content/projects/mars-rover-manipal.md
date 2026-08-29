@@ -9,7 +9,6 @@ period: "November 2022 – September 2025"
 image: "/assets/images/projects/mars-rover/featured.webp"
 imageAlt: "Mars Rover Manipal during field testing"
 demoUrl: "https://youtu.be/DTLZcMih598"
-githubUrl: "https://github.com/VipulDinesh/MRM-Pygame-GUI"
 metrics:
   - "2× International Rover Challenge winner"
   - "10 cm sampling depth"
@@ -52,7 +51,7 @@ These results reflect a team achievement. My responsibility was leading mechanic
 
 ## Leadership
 
-Alongside engineering delivery, I directed technical recruitment across more than 1,000 applicants. I also contributed a supporting PyGame operator interface; its source is linked above.
+Alongside engineering delivery, I directed technical recruitment across more than 1,000 applicants. During a separate three-day task, I also contributed a supporting PyGame operator interface.
 
 ## Rover overview
 
