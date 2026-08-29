@@ -32,9 +32,30 @@ Develop a 5 kg quadruped platform covering mechanical design, actuation, onboard
 
 I designed and built the 12-DOF, 5 kg mechanical platform and developed the locomotion stack that drives it. My work covered mechanical architecture, integration, analytic inverse kinematics, ROS 2 control, gait sequencing, and iterative physical tuning.
 
+<figure class="case-media">
+  <img src="/assets/images/projects/quadruped/gallery/chassis-integration.webp" alt="Quadruped chassis with onboard electronics during system integration" loading="lazy" />
+  <figcaption>Chassis, power electronics, and onboard-compute integration.</figcaption>
+</figure>
+
+<div class="case-gallery case-gallery--portrait">
+  <figure>
+    <img src="/assets/images/projects/quadruped/gallery/gait-test.webp" alt="Quadruped robot executing a gait during floor testing" loading="lazy" />
+    <figcaption>Physical gait test with coordinated leg motion.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/projects/quadruped/gallery/with-vipul.webp" alt="Vipul Dinesh holding the completed quadruped robot" loading="lazy" />
+    <figcaption>With the completed 12-DOF quadruped.</figcaption>
+  </figure>
+</div>
+
 ## Locomotion approach
 
 I derived an analytic inverse-kinematics solution that converts desired foot positions into real-time joint targets. The control architecture coordinates four legs, generates pose commands, and sequences walking and trotting gaits on a Raspberry Pi 5.
+
+<figure class="case-media case-media--portrait">
+  <img src="/assets/images/projects/quadruped/gallery/ik-derivation.webp" alt="Handwritten analytic inverse-kinematics derivation for the quadruped leg" loading="lazy" />
+  <figcaption>Analytic inverse-kinematics derivation used for real-time foot positioning.</figcaption>
+</figure>
 
 Physical testing required the mechanical offsets, actuator behaviour, frame conventions, gait timing, and ground contact assumptions to match the implemented control model.
 

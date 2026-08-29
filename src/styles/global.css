@@ -928,6 +928,63 @@ h1 {
   font-size: 0.85em;
 }
 
+.case-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 3.5rem;
+}
+
+.case-gallery--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-gallery figure,
+.case-media {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  margin: 0;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.case-gallery img,
+.case-media img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.case-gallery--portrait img,
+.case-media--portrait img {
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+}
+
+.case-media {
+  margin: 2rem 0 3.5rem;
+}
+
+.case-media img {
+  aspect-ratio: 16 / 9;
+}
+
+.case-media--portrait {
+  max-width: 520px;
+}
+
+.case-gallery figcaption,
+.case-media figcaption {
+  padding: 0.8rem 0.9rem;
+  background: #252a2e;
+  color: rgba(255, 255, 255, 0.82);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
 .video-frame {
   position: relative;
   width: 100%;
@@ -1276,6 +1333,11 @@ footer p {
 
   .section-heading {
     margin-bottom: 3rem;
+  }
+
+  .case-gallery,
+  .case-gallery--three {
+    grid-template-columns: 1fr;
   }
 
   .project-card {

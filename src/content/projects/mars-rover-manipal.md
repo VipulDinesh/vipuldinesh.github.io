@@ -27,6 +27,17 @@ technologies:
 
 I ultimately served as **Mechanical Design & Manufacturing Head**. My scope covered rover architecture, detailed design, fabrication, assembly, iteration, and competition deployment across multiple mechanical subsystems.
 
+<div class="case-gallery">
+  <figure>
+    <img src="/assets/images/projects/mars-rover/gallery/field-test.webp" alt="Mars Rover Manipal operating during an outdoor field test" loading="lazy" />
+    <figcaption>Integrated rover during field testing.</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/images/projects/mars-rover/gallery/terrain-traverse.webp" alt="Mars Rover Manipal traversing uneven terrain during suspension testing" loading="lazy" />
+    <figcaption>Suspension response during uneven-terrain traversal.</figcaption>
+  </figure>
+</div>
+
 ## Rover systems
 
 - Four-bar robotic arm for manipulation tasks.
@@ -35,11 +46,21 @@ I ultimately served as **Mechanical Design & Manufacturing Head**. My scope cove
 - Custom 3D-printed wheels and an optimized five-bar suspension.
 - Manufacturing planning, assembly, and integration across mechanical subsystems.
 
+<figure class="case-media">
+  <img src="/assets/images/projects/mars-rover/gallery/system-cad.webp" alt="CAD assembly of the Mars rover manipulator and science module" loading="lazy" />
+  <figcaption>CAD assembly showing the manipulator and science-module architecture.</figcaption>
+</figure>
+
 ## In-situ science module
 
 I developed a 3D-printed soil collection and analysis module based on a dual-auger leadscrew mechanism. It drills to **10 cm**, integrates **six sensors**, and includes sample caching and fluid delivery for soil analysis.
 
 Moving from one auger to two and optimizing the operating cycle enabled up to **100% faster sampling and sensor cycles**. The system is covered by patent application **202541099166**.
+
+<figure class="case-media case-media--portrait">
+  <img src="/assets/images/projects/mars-rover/gallery/science-module.webp" alt="Vipul Dinesh with the completed rover science module" loading="lazy" />
+  <figcaption>With the completed dual-auger science module.</figcaption>
+</figure>
 
 ## Competition validation
 
